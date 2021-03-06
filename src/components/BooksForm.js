@@ -1,5 +1,5 @@
 const BooksForm = () => {
-  const categories = ["Action", "Biography", "History", "Horror", "Kids", "Learning", "Sci-Fi"];
+  const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
   return (
     <form>
       <label>
@@ -9,7 +9,7 @@ const BooksForm = () => {
       <label>
         Category:
         <select>
-          {categories.map(cat=>(
+          {categories.map(cat => (
             <option value={cat}>{cat}</option>
           ))}
         </select>
@@ -17,6 +17,6 @@ const BooksForm = () => {
       <input type="submit" value="Submit" />
     </form>
   );
-}
+};
 
 export default BooksForm;
