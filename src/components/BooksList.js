@@ -5,20 +5,25 @@ import Book from './Book';
 
 const BooksList = ({ books }) => (
   <table>
-    <tr>
-      <th>Book ID</th>
-      <th>Title</th>
-      <th>Category</th>
-    </tr>
-    {books.map(book => (
-      <Book book={book} key={book.id} />
-    ))}
+    <thead>
+      <tr>
+        <th>Book ID</th>
+        <th>Title</th>
+        <th>Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      {books.map(book => (
+        <Book book={book} key={book.id} />
+      ))}
+    </tbody>
   </table>
 );
 
 BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
+
 const mapStateToProps = state => ({
   books: state,
 });

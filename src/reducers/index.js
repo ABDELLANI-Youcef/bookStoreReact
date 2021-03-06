@@ -13,7 +13,7 @@ const defaultBooks = [
   },
   {
     id: Math.floor(Math.random() * 1000),
-    title: 'life of Bill Gates',
+    title: 'Life of Bill Gates',
     category: 'Biography',
 
   },
