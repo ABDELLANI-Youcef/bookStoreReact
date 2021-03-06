@@ -4,28 +4,7 @@ import { createStore } from 'redux';
 import App from './components/App';
 import booksReducer from './reducers/books';
 
-const defaultBooks = [
-  {
-    id: Math.floor(Math.random() * 1000),
-    title: 'The war through the history',
-    category: 'History',
-
-  },
-  {
-    id: Math.floor(Math.random() * 1000),
-    title: 'Harry Potter',
-    category: 'Action',
-
-  },
-  {
-    id: Math.floor(Math.random() * 1000),
-    title: 'life of Bill Gates',
-    category: 'Biography',
-
-  },
-];
-
-const store = createStore(booksReducer(defaultBooks));
+const store = createStore(booksReducer);
 
 ReactDOM.render(
   <Provider store={store}>
