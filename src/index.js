@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import App from './components/App';
 import booksReducer from './reducers/books';
-import { createStore } from "redux";
 
 const defaultBooks = [
   {
