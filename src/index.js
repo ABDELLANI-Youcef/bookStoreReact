@@ -1,15 +1,15 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import App from './components/App';
+import booksReducer from './reducers/books';
 
-const App = () => (
-  <>
-    <h1>Hello World!</h1>
-  </>
-);
+const store = createStore(booksReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+
+  </Provider>,
   document.getElementById('root'),
 );
