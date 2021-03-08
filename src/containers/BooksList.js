@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Book from './Book';
 
 const BooksList = ({ books }) => (
+
   <table>
     <thead>
       <tr>
@@ -25,7 +26,7 @@ BooksList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  books: state,
+  books: state.books,
 });
 
 export default connect(mapStateToProps)(BooksList);
