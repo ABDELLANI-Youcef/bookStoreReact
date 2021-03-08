@@ -6,19 +6,24 @@ const BooksForm = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
 
-  const handleChange = () => {
-
+  const handleChange = e => {
+    // console.log(e.targe)
+    if (e.target.id === 'title') {
+      setTitle(e.target.value);
+    } else {
+      setCategory(e.target.value);
+    }
   };
 
   return (
     <form>
       <label htmlFor="title">
         Title:
-        <input type="text" name="title" id="title" />
+        <input type="text" name="title" id="title" onChange={handleChange} value={title} />
       </label>
       <label htmlFor="category">
         Category:
-        <select id="category">
+        <select id="category" value={category} onChange={handleChange}>
           {categories.map(cat => (
             <option value={cat} key={cat}>{cat}</option>
           ))}
