@@ -1,5 +1,15 @@
+import React, { useState } from 'react';
+
 const BooksForm = () => {
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+
+  const handleChange = () => {
+
+  };
+
   return (
     <form>
       <label htmlFor="title">
