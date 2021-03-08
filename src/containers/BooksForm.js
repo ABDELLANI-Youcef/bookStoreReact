@@ -17,7 +17,8 @@ const BooksForm = ({ createBook }) => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = e => {
+    e.preventDefault();
     createBook({ id: Math.floor(Math.random() * 1000), title, category });
     setTitle('');
     setCategory('Action');
