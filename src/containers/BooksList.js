@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Book from './Book';
 
 const BooksList = ({ books }) => (
+
   <table>
     <thead>
       <tr>
