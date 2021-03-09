@@ -8,11 +8,7 @@ import filterReducer from './reducers/filter';
 import './styles/index.css';
 
 const rootReducer = combineReducers({ books: booksReducer, filter: filterReducer });
-
-/* eslint-disable no-underscore-dangle */
-const store = createStore(rootReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-/* eslint-enable */
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <ChakraProvider>
