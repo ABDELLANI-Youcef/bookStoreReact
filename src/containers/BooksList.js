@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Book from './Book';
-import CategoryFilter from './CategoryFilter';
+import CategoryFilter from '../components/CategoryFilter';
 import { changeFilter, removeBook } from '../actions/index';
 
 const BooksList = ({
@@ -22,7 +22,7 @@ const BooksList = ({
 
   return (
     <>
-      <CategoryFilter clickHandle={handleFilterChange} />
+      <CategoryFilter clickHandle={handleFilterChange} filter={filter} />
       <table>
         <thead>
           <tr>
