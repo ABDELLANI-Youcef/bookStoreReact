@@ -13,10 +13,17 @@
 }
 
 @font-face {
-  font-family: robotoSlab;
+  font-family: robotoSlabRegular;
   font-style: normal;
   font-weight: 400;
-  src: url(./RobotoSlab-Light.ttf);
+  src: url(./RobotoSlab-Regular.ttf);
+}
+
+@font-face {
+  font-family: robotoSlabBold;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./RobotoSlab-Bold.ttf);
 }
 
 body {

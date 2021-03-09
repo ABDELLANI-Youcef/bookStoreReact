@@ -21,7 +21,7 @@ const BooksList = ({
   };
   const renderBooks = filter.length > 1 ? books : books.filter(book => book.category === filter[0]);
   return (
-    <Box bg="#e8e8e8">
+    <Box bg="#f5f6fa">
       <Flex bg="#fff" p="23px 99px 27px 100px" alignItems="center">
         <Flex alignItems="center">
           <Text color="#0290ff" fontSize="30px" fontWeight="bold" fontFamily="montserratBold">Bookstore CMS</Text>
@@ -33,20 +33,13 @@ const BooksList = ({
           <FaUserAlt color="#0290ff" />
         </Box>
       </Flex>
-      <table>
-        <thead>
-          <tr>
-            <th>Book ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
+      <Box>
+        <Box>
           {renderBooks.map(book => (
             <Book book={book} clickHandler={handleRemoveBook} key={book.id} />
           ))}
-        </tbody>
-      </table>
+        </Box>
+      </Box>
     </Box>
   );
 };
