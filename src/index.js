@@ -5,7 +5,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import App from './components/App';
 import booksReducer from './reducers/books';
 import filterReducer from './reducers/filter';
-import './index.css';
+import './styles/index.css';
 
 const rootReducer = combineReducers({ books: booksReducer, filter: filterReducer });
 

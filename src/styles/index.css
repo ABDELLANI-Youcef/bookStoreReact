@@ -1,0 +1,40 @@
+@font-face {
+  font-family: montserratBold;
+  font-style: normal;
+  font-weight: 700;
+  src: url(./montserrat.bold.ttf);
+}
+
+@font-face {
+  font-family: montserratRegular;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./montserrat.regular.ttf);
+}
+
+@font-face {
+  font-family: robotoSlab;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./RobotoSlab-Light.ttf);
+}
+
+body {
+  margin: 0;
+  font-family:
+    robotoSlab,
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
+    monospace;
+}

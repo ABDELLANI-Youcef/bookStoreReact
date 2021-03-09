@@ -23,10 +23,9 @@ const BooksList = ({
   return (
     <Box bg="#e8e8e8">
       <Flex bg="#fff" p="23px 99px 27px 100px" alignItems="center">
-
         <Flex alignItems="center">
-          <Text color="#0290ff" fontSize="30px" fontWeight="bold">Bookstore CMS</Text>
-          <Text fontSize="13px" color="#121212" m="0px 41px 0px 47px">BOOKS</Text>
+          <Text color="#0290ff" fontSize="30px" fontWeight="bold" fontFamily="montserratBold">Bookstore CMS</Text>
+          <Text fontSize="13px" color="#121212" m="0px 41px 0px 47px" fontFamily="montserratRegular">BOOKS</Text>
           <CategoryFilter clickHandle={handleFilterChange} filter={filter} />
         </Flex>
         <Spacer />

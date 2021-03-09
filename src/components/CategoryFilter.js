@@ -13,7 +13,7 @@ const CategoryFilter = ({ clickHandle }) => {
     }
   };
   return (
-    <Select w="161px" variant="unstyled" id="filter" onChange={changeHandle} icon="" color="#b3bccf" letterSpacing="1.9px">
+    <Select w="161px" variant="unstyled" id="filter" fontFamily="montserratRegular" onChange={changeHandle} icon="" color="#b3bccf" letterSpacing="1.9px">
       <option disabled selected>CATEGORIES</option>
       {categories.map(cat => (
         <option value={cat} key={cat}>{cat}</option>
