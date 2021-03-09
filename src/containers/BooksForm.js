@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import {
+  Box, Text, FormControl, Input, Flex, Select,
+} from '@chakra-ui/react';
 import { createBook } from '../actions/index';
 
 const BooksForm = ({ createBook }) => {
@@ -19,27 +22,30 @@ const BooksForm = ({ createBook }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    createBook({ id: Math.floor(Math.random() * 1000), title, category });
+    if (title.match(/\w/i)) {
+      createBook({ id: Math.floor(Math.random() * 1000), title, category });
+    }
     setTitle('');
     setCategory('Action');
   };
 
   return (
-    <form>
-      <label htmlFor="title">
-        Title:
-        <input type="text" name="title" id="title" onChange={handleChange} value={title} />
-      </label>
-      <label htmlFor="category">
-        Category:
-        <select id="category" value={category} onChange={handleChange}>
-          {categories.map(cat => (
-            <option value={cat} key={cat}>{cat}</option>
-          ))}
-        </select>
-      </label>
-      <input type="submit" value="Submit" onClick={handleSubmit} />
-    </form>
+    <Box m="37px 100px 0" pt="29px" borderTop="1px solid #e8e8e8">
+      <Text fontFamily="montserratBold" fontWeight="bold" fontSize="20px" color="#888888" mb="19px  ">ADD NEW BOOK</Text>
+      <FormControl>
+        <Flex>
+          <Input type="text" name="title" id="title" onChange={handleChange} value={title} placeholder="Book title" bg="white" />
+          <Select id="category" onChange={handleChange} bg="white" mx="34px" w="285px">
+            <option disabled selected>Category</option>
+            {categories.map(cat => (
+              <option value={cat} key={cat}>{cat}</option>
+            ))}
+          </Select>
+
+          <Input type="submit" value="ADD BOOK" onClick={handleSubmit} color="#fff" bg="#0290ff" w="184px" fontFamily="robotoSlabBold" fontWeight="bold" />
+        </Flex>
+      </FormControl>
+    </Box>
   );
 };
 
