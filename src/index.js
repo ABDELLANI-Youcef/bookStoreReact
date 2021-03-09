@@ -10,6 +10,7 @@ import './styles/index.css';
 
 const rootReducer = combineReducers({ books: booksReducer, filter: filterReducer });
 const store = createStore(rootReducer);
+
 ReactDOM.render(
   <ChakraProvider>
     <Provider store={store}>
