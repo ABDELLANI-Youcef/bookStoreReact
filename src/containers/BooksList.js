@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Box, Text, Flex } from '@chakra-ui/react';
+import {
+  Box, Text, Flex, Spacer,
+} from '@chakra-ui/react';
+import { FaUserAlt } from 'react-icons/fa';
 import Book from './Book';
 import CategoryFilter from '../components/CategoryFilter';
 import { changeFilter, removeBook } from '../actions/index';
@@ -20,9 +23,16 @@ const BooksList = ({
   return (
     <Box bg="#e8e8e8">
       <Flex bg="#fff" p="23px 99px 27px 100px" alignItems="center">
-        <Text color="#0290ff" fontSize="30px" fontWeight="bold">Bookstore CMS</Text>
-        <Text fontSize="13px" color="#121212" m="18px 41px 15px 47px">BOOKS</Text>
-        <CategoryFilter clickHandle={handleFilterChange} filter={filter} />
+
+        <Flex alignItems="center">
+          <Text color="#0290ff" fontSize="30px" fontWeight="bold">Bookstore CMS</Text>
+          <Text fontSize="13px" color="#121212" m="0px 41px 0px 47px">BOOKS</Text>
+          <CategoryFilter clickHandle={handleFilterChange} filter={filter} />
+        </Flex>
+        <Spacer />
+        <Box borderRadius="50%" border="1px" borderColor="gray.200" w="45px" h="45px" p="14px">
+          <FaUserAlt color="#0290ff" />
+        </Box>
       </Flex>
       <table>
         <thead>
