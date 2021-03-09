@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Select } from '@chakra-ui/react';
 
 const categories = ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
@@ -12,11 +13,11 @@ const CategoryFilter = ({ clickHandle, filter }) => {
     }
   };
   return (
-    <select id="filter" value={filter} onChange={changeHandle}>
+    <Select w="12%" variant="unstyled" id="filter" value={filter} onChange={changeHandle}>
       {categories.map(cat => (
         <option value={cat} key={cat}>{cat}</option>
       ))}
-    </select>
+    </Select>
   );
 };
 

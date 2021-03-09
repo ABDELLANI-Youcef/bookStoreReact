@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Box, Text, Flex } from '@chakra-ui/react';
 import Book from './Book';
 import CategoryFilter from '../components/CategoryFilter';
 import { changeFilter, removeBook } from '../actions/index';
@@ -17,8 +18,12 @@ const BooksList = ({
   };
   const renderBooks = filter.length > 1 ? books : books.filter(book => book.category === filter[0]);
   return (
-    <>
-      <CategoryFilter clickHandle={handleFilterChange} filter={filter} />
+    <Box bg="#e8e8e8">
+      <Flex bg="#fff" p="23px 99px 27px 100px" alignItems="center">
+        <Text color="#0290ff" fontSize="30px" fontWeight="bold">Bookstore CMS</Text>
+        <Text fontSize="13px" color="#121212" m="18px 41px 15px 47px">BOOKS</Text>
+        <CategoryFilter clickHandle={handleFilterChange} filter={filter} />
+      </Flex>
       <table>
         <thead>
           <tr>
@@ -33,7 +38,7 @@ const BooksList = ({
           ))}
         </tbody>
       </table>
-    </>
+    </Box>
   );
 };
 BooksList.propTypes = {
