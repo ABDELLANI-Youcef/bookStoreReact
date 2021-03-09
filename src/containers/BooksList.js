@@ -9,17 +9,13 @@ const BooksList = ({
   books, changeFilter, filter, removeBook,
 }) => {
   const handleFilterChange = filter => {
-    if (filter === 'All') {
-      changeFilter('');
-    } else {
-      changeFilter(filter);
-    }
+    changeFilter(filter);
   };
 
   const handleRemoveBook = book => {
     removeBook(book);
   };
-
+  const renderBooks = filter.length > 1 ? books : books.filter(book => book.category === filter[0]);
   return (
     <>
       <CategoryFilter clickHandle={handleFilterChange} filter={filter} />
@@ -32,7 +28,7 @@ const BooksList = ({
           </tr>
         </thead>
         <tbody>
-          {books.filter(book => book.category === filter || filter === '').map(book => (
+          {renderBooks.map(book => (
             <Book book={book} clickHandler={handleRemoveBook} key={book.id} />
           ))}
         </tbody>

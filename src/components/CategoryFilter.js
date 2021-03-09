@@ -5,7 +5,11 @@ const categories = ['All', 'Action', 'Biography', 'History', 'Horror', 'Kids', '
 
 const CategoryFilter = ({ clickHandle, filter }) => {
   const changeHandle = e => {
-    clickHandle(e.target.value);
+    if (e.target.value === 'All') {
+      clickHandle(categories.filter(cat => cat !== 'All'));
+    } else {
+      clickHandle([e.target.value]);
+    }
   };
   return (
     <select id="filter" value={filter} onChange={changeHandle}>
@@ -18,7 +22,7 @@ const CategoryFilter = ({ clickHandle, filter }) => {
 
 CategoryFilter.propTypes = {
   clickHandle: PropTypes.func.isRequired,
-  filter: PropTypes.string.isRequired,
+  filter: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default CategoryFilter;
