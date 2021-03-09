@@ -3,12 +3,12 @@ const REMOVE_BOOK = 'REMOVE_BOOK';
 
 const createBook = book => ({
   type: CREATE_BOOK,
-  book,
+  payload: book,
 });
 
 const removeBook = book => ({
   type: REMOVE_BOOK,
-  book,
+  payload: book,
 });
 
 export {
