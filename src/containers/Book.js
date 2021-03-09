@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import {
   Box, Text, Button, Flex, Grid,
 } from '@chakra-ui/react';
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 
 const Book = ({ book, clickHandler }) => {
   const removeBook = () => {
@@ -19,19 +20,19 @@ const Book = ({ book, clickHandler }) => {
           <Button fontFamily="robotoSlabRegular" fontWeight="300" color="#4386bf" p="1em" variant="link">Edit</Button>
         </Flex>
       </Box>
-      <Box>
+      <Flex>
         <Box>
-          O
+          <AiOutlineLoading3Quarters color="#0290ff" fontSize="6em" />
         </Box>
-        <Box>
-          <Text>100%</Text>
-          <Text>Completed</Text>
+        <Box m="0.8em">
+          <Text fontSize="32px" fontFamily="montserratRegular">100%</Text>
+          <Text opacity="0.5" fontFamily="montserratRegular">Completed</Text>
         </Box>
-      </Box>
-      <Box>
-        <Text>CURRENT CHAPTER</Text>
-        <Text>Chapter XX</Text>
-        <Button>Update Progress</Button>
+      </Flex>
+      <Box borderLeft="1px solid" borderColor="#e8e8e8" pl="60px">
+        <Text fontFamily="robotoSlabRegular" opacity="0.5">CURRENT CHAPTER</Text>
+        <Text fontFamily="robotoSlabLight" fontWeight="300">Chapter 5</Text>
+        <Button mt="34px" fontFamily="robotoSlabLight" fontWeight="300" color="#fff" bg="#0290ff">Update Progress</Button>
       </Box>
     </Grid>
   );

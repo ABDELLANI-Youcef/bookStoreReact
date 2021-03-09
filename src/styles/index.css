@@ -26,6 +26,13 @@
   src: url(./RobotoSlab-Bold.ttf);
 }
 
+@font-face {
+  font-family: robotoSlabLight;
+  font-style: normal;
+  font-weight: 300;
+  src: url(./RobotoSlab-Light.ttf);
+}
+
 body {
   margin: 0;
   font-family:
