@@ -1,3 +1,4 @@
+/* eslint-disable no-multiple-empty-lines */
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
@@ -17,3 +18,4 @@ ReactDOM.render(
   </ChakraProvider>,
   document.getElementById('root'),
 );
+/* eslint-enable no-multiple-empty-lines */
