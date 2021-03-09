@@ -12,11 +12,11 @@ const Book = ({ book, clickHandler }) => {
       <Box>
         <Text fontFamily="montserratBold" opacity="0.5" fontWeight="bold" fontSize="14px">{book.category}</Text>
         <Text fontFamily="robotoSlabBold" fontSize="22px">{book.title}</Text>
-        <Text>Author Name</Text>
-        <Flex>
-          <Text>Comments</Text>
-          <Button onClick={removeBook} type="button">Remove</Button>
-          <Text>Edit</Text>
+        <Text fontFamily="robotoSlabRegular" color="#4386bf" fontSize="14px">Author Name</Text>
+        <Flex fontSize="14px">
+          <Button fontFamily="robotoSlabRegular" fontWeight="300" color="#4386bf" p="1em 1em 1em 0" variant="link">Comments</Button>
+          <Button fontFamily="robotoSlabRegular" fontWeight="300" color="#4386bf" borderRight="1px solid" borderLeft="1px solid" borderColor="#e8e8e8" borderRadius="0" m="0.7em 0" p="0 1em" variant="link" onClick={removeBook} type="button">Remove</Button>
+          <Button fontFamily="robotoSlabRegular" fontWeight="300" color="#4386bf" p="1em" variant="link">Edit</Button>
         </Flex>
       </Box>
       <Box>
