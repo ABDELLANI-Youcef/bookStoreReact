@@ -21,6 +21,7 @@ To build this application we used:
 
 - Javascript ES6
 - Html/CSS
+- Chakra-UI
 - React
 - Redux
 - Create React App
