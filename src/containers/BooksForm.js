@@ -35,8 +35,7 @@ const BooksForm = ({ createBook }) => {
       <FormControl>
         <Flex>
           <Input type="text" name="title" id="title" onChange={handleChange} value={title} placeholder="Book title" bg="white" />
-          <Select id="category" onChange={handleChange} bg="white" mx="34px" w="285px">
-            <option disabled selected>Category</option>
+          <Select id="category" value={category} onChange={handleChange} bg="white" mx="34px" w="285px">
             {categories.map(cat => (
               <option value={cat} key={cat}>{cat}</option>
             ))}

@@ -29,7 +29,7 @@ const BooksList = ({
           <CategoryFilter clickHandle={handleFilterChange} filter={filter} />
         </Flex>
         <Spacer />
-        <Box borderRadius="50%" border="1px" borderColor="gray.200" w="45px" h="45px" p="14px">
+        <Box borderRadius="50%" border="1px" borderColor="gray.200" w="45px" h="45px" p="0.8em">
           <FaUserAlt color="#0290ff" />
         </Box>
       </Flex>
@@ -44,8 +44,8 @@ const BooksList = ({
   );
 };
 BooksList.propTypes = {
+  filter: PropTypes.arrayOf(PropTypes.string).isRequired,
   books: PropTypes.arrayOf(PropTypes.object).isRequired,
-  filter: PropTypes.string.isRequired,
   changeFilter: PropTypes.func.isRequired,
   removeBook: PropTypes.func.isRequired,
 };
