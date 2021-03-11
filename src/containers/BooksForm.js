@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-// import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
 import {
   Box, Text, FormControl, Input, Flex, Select,
 } from '@chakra-ui/react';
 import { sendDataApi } from '../reducers/index';
-// import { createBook } from '../actions/index';
 
 const BooksForm = () => {
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
@@ -52,13 +49,5 @@ const BooksForm = () => {
     </Box>
   );
 };
-
-// BooksForm.propTypes = {
-//   createBook: PropTypes.func.isRequired,
-// };
-
-// const mapDispatch = {
-//   createBook,
-// };
 
 export default BooksForm;
