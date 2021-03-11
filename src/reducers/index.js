@@ -37,9 +37,6 @@ export const sendDataApi = async book => {
       },
     });
     const result = await response.json();
-    console.log('here');
-    console.log(result);
-    console.log('endhere');
     return result;
   } catch (error) {
     return error;
