@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import {
   Box, Text, FormControl, Input, Flex, Select,
 } from '@chakra-ui/react';
-import { createBook } from '../actions/index';
+import { sendDataApi } from '../reducers/index';
 
-const BooksForm = ({ createBook }) => {
+const BooksForm = () => {
   const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('Action');
+  const [author, setAuthor] = useState('');
 
   const handleChange = e => {
     if (e.target.id === 'title') {
       setTitle(e.target.value);
-    } else {
+    } else if (e.target.id === 'category') {
       setCategory(e.target.value);
+    } else {
+      setAuthor(e.target.value);
     }
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    if (title.match(/\w/i)) {
-      createBook({ id: Math.floor(Math.random() * 1000), title, category });
+  const handleSubmit = () => {
+    window.location.reload();
+    if (title.match(/\w/i) && (author.match(/\w/i))) {
+      sendDataApi({ title, author, category });
     }
     setTitle('');
     setCategory('Action');
+    setAuthor('');
   };
 
   return (
@@ -35,25 +37,17 @@ const BooksForm = ({ createBook }) => {
       <FormControl>
         <Flex>
           <Input type="text" name="title" id="title" onChange={handleChange} value={title} placeholder="Book title" bg="white" />
-          <Select id="category" value={category} onChange={handleChange} bg="white" mx="34px" w="285px">
+          <Input type="text" name="title" id="author" onChange={handleChange} value={author} placeholder="Author" bg="white" mx="1em" />
+          <Select id="category" value={category} onChange={handleChange} bg="white" mx="1em">
             {categories.map(cat => (
               <option value={cat} key={cat}>{cat}</option>
             ))}
           </Select>
-
-          <Input type="submit" value="ADD BOOK" onClick={handleSubmit} color="#fff" bg="#0290ff" w="184px" fontFamily="robotoSlabBold" fontWeight="bold" />
+          <Input type="submit" value="ADD BOOK" onClick={handleSubmit} color="#fff" bg="#0290ff" fontFamily="robotoSlabBold" fontWeight="bold" />
         </Flex>
       </FormControl>
     </Box>
   );
 };
 
-BooksForm.propTypes = {
-  createBook: PropTypes.func.isRequired,
-};
-
-const mapDispatch = {
-  createBook,
-};
-
-export default connect(null, mapDispatch)(BooksForm);
+export default BooksForm;
