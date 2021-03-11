@@ -3,10 +3,11 @@ import {
   Box, Text, Button, Flex, Grid,
 } from '@chakra-ui/react';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { removeDataApi } from '../reducers/index';
 
-const Book = ({ book, clickHandler }) => {
+const Book = ({ book }) => {
   const removeBook = () => {
-    clickHandler(book);
+    removeDataApi(book);
   };
   return (
     <Grid templateColumns="repeat(3, 1fr)" gap={6} border="solid 1px #e8e8e8" bg="#fff" m="37px 100px 0" p="32px 147px 26px 27px" borderRadius="4px" key={book.id}>
@@ -39,7 +40,6 @@ const Book = ({ book, clickHandler }) => {
 };
 Book.propTypes = {
   book: PropTypes.objectOf(PropTypes.any).isRequired,
-  clickHandler: PropTypes.func.isRequired,
 };
 
 export default Book;

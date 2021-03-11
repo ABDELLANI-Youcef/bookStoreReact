@@ -43,4 +43,17 @@ export const sendDataApi = async book => {
   }
 };
 
+export const removeDataApi = async book => {
+  await fetch(`${URL}/${book.id}`, {
+    mode: 'cors',
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  const result = 'book deleted';
+  window.location.reload();
+  return result;
+};
+
 export default defaultBooks;
