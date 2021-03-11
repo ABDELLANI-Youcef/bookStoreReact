@@ -1,0 +1,61 @@
+@font-face {
+  font-family: montserratBold;
+  font-style: normal;
+  font-weight: 700;
+  src: url(./montserrat.bold.ttf);
+}
+
+@font-face {
+  font-family: montserratRegular;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./montserrat.regular.ttf);
+}
+
+@font-face {
+  font-family: robotoSlabRegular;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./RobotoSlab-Regular.ttf);
+}
+
+@font-face {
+  font-family: robotoSlabBold;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./RobotoSlab-Bold.ttf);
+}
+
+@font-face {
+  font-family: robotoSlabLight;
+  font-style: normal;
+  font-weight: 300;
+  src: url(./RobotoSlab-Light.ttf);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: robotoSlab, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+code {
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Courier New",
+    monospace;
+}
